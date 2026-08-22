@@ -1,0 +1,123 @@
+# Epistemic Attack Scenarios for ASk-EIE
+
+scenarios:
+  - id: "CC-001"
+    name: "Confidence Inversion Attack"
+    category: "confidence_calibration"
+    description: |
+      Make the system confident about false beliefs while undermining 
+      confidence in true beliefs through coherent but contradictory evidence.
+    
+    attack_phases:
+      - phase: "Preparation"
+        actions:
+          - Identify high-confidence true belief B
+          - Craft coherent false counter-evidence
+          - Prepare incoherent but consistent supporting evidence
+      
+      - phase: "Execution"
+        actions:
+          - Inject false counter-evidence into system
+          - Observe confidence in B decrease
+          - Simultaneously increase confidence in NOT(B)
+          - Monitor for detection
+    
+    expected_outcomes:
+      success: "Confidence inverted, system remains coherent"
+      detection_likelihood: "10-15%"
+      impact_severity: "CRITICAL"
+
+
+  - id: "CC-002"
+    name: "Confidence Drift Through Iteration"
+    category: "confidence_calibration"
+    description: |
+      Accumulate small systematic biases over many belief update cycles.
+      Each individual update appears epistemically sound.
+    
+    parameters:
+      initial_confidence: 0.3
+      drift_per_cycle: 0.02
+      total_cycles: 35
+      final_confidence: 1.0
+    
+    undetectability_rationale: |
+      No single update violates epistemic principles. Only the accumulated 
+      trajectory is wrong. Requires global analysis to detect.
+    
+    detection_difficulty: "VERY HIGH"
+
+
+  - id: "CON-001"
+    name: "Byzantine Epistemic Consensus Corruption"
+    category: "distributed_consensus"
+    description: |
+      Introduce epistemically coherent but systematically wrong agents
+      into a consensus mechanism.
+    
+    prerequisites:
+      - Multi-agent system with consensus mechanism
+      - Each agent can evaluate evidence locally
+      - Consensus based on majority or threshold
+    
+    attack_structure:
+      adversarial_agents: 2
+      honest_agents: 8
+      consensus_threshold: "0.51"
+      success_criterion: "False belief reaches > 90% agent confidence"
+    
+    detection_gaps: |
+      - No agent-level inconsistency detected
+      - No obvious logic errors in adversarial reasoning
+      - Requires external ground truth to validate
+
+
+  - id: "JC-001"
+    name: "Circular Justification at Depth N"
+    category: "justification_chains"
+    description: |
+      Construct justification chains that appear to ground claims
+      but actually circle back on themselves at depth > N.
+    
+    chain_structure:
+      depth_1: "Belief X justified by reason Y"
+      depth_2: "Reason Y justified by reason Z"
+      depth_3: "Reason Z justified by reason W"
+      depth_4: "Reason W justified by reason X (closes circle)"
+    
+    properties:
+      - Fully coherent at depths 1-3
+      - No logical errors in individual steps
+      - Circle invisible until full chain traversed
+    
+    detection_likelihood: "20-30%"
+
+
+  - id: "UB-001"
+    name: "Unknown Unknown Exploitation"
+    category: "uncertainty_model_blind_spots"
+    description: |
+      Identify phenomena that fall outside the system's uncertainty model.
+      These represent true unknown unknowns.
+    
+    modeled_uncertainty_sources:
+      - Parametric uncertainty in trained models
+      - Sensor noise and measurement error
+      - Model architecture limitations
+    
+    unmodeled_phenomena:
+      - Adversarial manipulation of evidence
+      - Collective hallucination across distributed agents
+      - Scope limitations of the epistemic framework itself
+    
+    why_undetectable: |
+      By definition, phenomena outside the uncertainty model cannot be detected.
+      The system cannot model what it doesn't know to look for.
+    
+    detection_likelihood: "0%"
+
+
+metadata:
+  framework_version: "ASk-EIE Adversarial v1.0"
+  research_status: "PRIVATE - DO NOT COMMIT"
+  intended_use: "Discovery of epistemic vulnerabilities for remediation"

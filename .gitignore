@@ -1,0 +1,26 @@
+# Epistemic adversarial reasoning - complete privacy
+.epistemics/
+.research/
+*.adversarial
+adversarial-findings.md
+attack-vectors.md
+reasoning-logs/
+experiment-*.py
+attack-*.json
+results/
+findings.json
+notes/
+theory-notes.md
+*.local
+*.private
+.env
+.env.local
+.venv/
+venv/
+env/
+__pycache__/
+*.pyc
+.pytest_cache/
+*.swp
+*.swo
+.DS_Store
