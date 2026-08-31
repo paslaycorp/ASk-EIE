@@ -1,0 +1,26 @@
+{
+  "subject_id": "vendor-demo-001",
+  "records": [
+    {
+      "evidence_id": "security-001",
+      "source": "vendor-security-report",
+      "claim": "Vendor maintains an independent security assessment.",
+      "observed_at": "2026-08-29T00:00:00Z",
+      "metadata": {"document_type": "security_report"}
+    },
+    {
+      "evidence_id": "contract-001",
+      "source": "master-services-agreement",
+      "claim": "Vendor contract defines data-processing responsibilities.",
+      "observed_at": "2026-08-29T00:00:00Z",
+      "metadata": {"document_type": "contract"}
+    },
+    {
+      "evidence_id": "ai-001",
+      "source": "vendor-ai-questionnaire",
+      "claim": "Customer data is not used to train the vendor's general models.",
+      "observed_at": "2026-08-29T00:00:00Z",
+      "metadata": {"document_type": "questionnaire"}
+    }
+  ]
+}

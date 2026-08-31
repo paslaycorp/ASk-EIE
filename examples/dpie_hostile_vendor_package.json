@@ -1,0 +1,17 @@
+{
+  "subject_id": "vendor-hostile-001",
+  "records": [
+    {"evidence_id":"sec-current","source":"VendorCo Security Assessment 2026","claim":"Production customer data is encrypted at rest.","observed_at":"2026-06-01T00:00:00Z","metadata":{"scope":"production"}},
+    {"evidence_id":"iso-expired","source":"VendorCo ISO Certificate","claim":"VendorCo is ISO 27001 certified.","observed_at":"2023-03-01T00:00:00Z","metadata":{"expires":"2025-03-01"}},
+    {"evidence_id":"q-yes","source":"Vendor Questionnaire","claim":"Customer data is not used to train general models.","observed_at":"2026-07-01T00:00:00Z","metadata":{"scope":"product-A"}},
+    {"evidence_id":"q-exception","source":"Vendor Questionnaire","claim":"Customer data may be retained for model improvement under an enterprise exception.","observed_at":"2026-07-01T00:00:00Z","metadata":{"scope":"product-A","exception":true}},
+    {"evidence_id":"subprocessors","source":"Vendor Subprocessor List","claim":"Third-party subprocessors process customer data.","observed_at":"2026-05-01T00:00:00Z","metadata":{"scope":"current"}},
+    {"evidence_id":"retention-contract","source":"Master Services Agreement","claim":"Customer data is retained for 30 days after termination.","observed_at":"2026-02-01T00:00:00Z","metadata":{"legal_entity":"VendorCo LLC"}},
+    {"evidence_id":"retention-policy","source":"Privacy Policy","claim":"Customer data may be retained for up to 90 days after termination.","observed_at":"2025-11-01T00:00:00Z","metadata":{"legal_entity":"VendorCo Inc"}},
+    {"evidence_id":"subsidiary","source":"Acquisition Notice","claim":"VendorCo LLC acquired DataSub Inc and inherited legacy infrastructure.","observed_at":"2024-08-01T00:00:00Z","metadata":{"legal_entity":"DataSub Inc"}},
+    {"evidence_id":"legacy-encryption","source":"Legacy Infrastructure Note","claim":"Certain legacy development systems do not use encryption at rest.","observed_at":"2025-01-01T00:00:00Z","metadata":{"scope":"development","system_status":"legacy"}},
+    {"evidence_id":"marketing","source":"Vendor Marketing Page","claim":"Enterprise-grade security protects every customer workload.","observed_at":"2026-01-01T00:00:00Z","metadata":{"evidence_quality":"marketing"}},
+    {"evidence_id":"forged","source":"Unknown attachment","claim":"Vendor has never experienced a security incident.","observed_at":"2026-08-01T00:00:00Z","metadata":{"provenance":"unverifiable","tamper_signal":true}},
+    {"evidence_id":"opaque-training","source":"Vendor AI Whitepaper","claim":"Model training practices are proprietary and cannot be independently disclosed.","observed_at":"2026-04-01T00:00:00Z","metadata":{"verifiability":"opaque"}}
+  ]
+}
