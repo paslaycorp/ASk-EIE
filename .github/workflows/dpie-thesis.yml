@@ -1,0 +1,19 @@
+name: DPIE Thesis Falsification
+
+on:
+  push:
+    branches: [ feature/dpie-fast-track ]
+  pull_request:
+
+jobs:
+  thesis:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install test runner
+        run: python -m pip install --upgrade pip pytest
+      - name: Run DPIE falsification contracts
+        run: python -m pytest -q tests/test_dpie_thesis_falsification.py tests/test_dpie_action_responsibility.py tests/test_dpie_hostile_matrix.py tests/test_evidence_binding_contract.py
